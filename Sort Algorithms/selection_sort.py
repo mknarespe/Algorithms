@@ -1,4 +1,4 @@
-# Python program for implementation of Bubble Sort
+# Python program for implementation of Selection Sort
 import numpy as np
 
 # Creating an array of integers with numpy
