@@ -3,10 +3,11 @@ import numpy as np
 
 # Creating an array of integers with numpy
 array = np.random.randint(-100, 100, 10)
+arr_test = [63, 30, -57, -25, -41, 44, -88, 87, -95, -85]
 
 
-def bubble_sort(arr):
-    length = len(arr) - 1
+def selection_sort(arr):
+    length = len(arr)-1
     array_sorted = True
 
     # Print an array before sorting
@@ -17,13 +18,16 @@ def bubble_sort(arr):
         if arr[k] > arr[k + 1]:
             array_sorted = False
 
-    # Bubble sort
-    # Sorting an array by swapping adjacent elements
+    # Selection sort
+    # arr[min_index] -> minimum value
     if not array_sorted:
         for n in range(length):
-            for i in range(length - n):
-                if arr[i] > arr[i + 1]:
-                    arr[i], arr[i + 1] = arr[i + 1], arr[i]
+            min_index = n
+            for i in range(n, length+1):
+                if arr[min_index] > arr[i]:
+                    min_index = i
+            arr[n], arr[min_index] = arr[min_index], arr[n]
+
         # Print an array after sorting
         print('\n [-----------------AFTER-----------------]\n', arr)
     else:
@@ -32,4 +36,4 @@ def bubble_sort(arr):
 
 
 if __name__ == '__main__':
-    bubble_sort(array)
+    selection_sort(array)
