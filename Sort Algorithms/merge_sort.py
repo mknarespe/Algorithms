@@ -1,13 +1,11 @@
-# Python program for implementation of Insertion Sort
+# Python program for implementation of Merge Sort
 import numpy as np
 
 # Creating an array of integers with numpy
 array = np.random.randint(-100, 100, 10)
-arr_test = [63, 30, -57, -25, -41, 44, -88, 87, -95, -85]
-arr_short = [7, 3, 4, 2, 5]
 
 
-def insertion_sort(arr):
+def merge_sort(arr):
     length = len(arr) - 1
     array_sorted = True
 
@@ -19,17 +17,12 @@ def insertion_sort(arr):
         if arr[k] > arr[k + 1]:
             array_sorted = False
 
-    # Insertion sort
+    # Merge sort
+    # Sorting an array by swapping adjacent elements
     if not array_sorted:
-        for i in range(1, len(arr)):
-            key = arr[i]
-            n = 1
-            while key < arr[i - n] and i - n > -1:
-                arr[i - n + 1] = arr[i - n]
-                n += 1
-            arr[i - n + 1] = key
 
-            # Print an array after sorting
+
+        # Print an array after sorting
         print('\n [-----------------AFTER-----------------]\n', arr)
     else:
         # Print if an array does not need to be sorted
@@ -37,4 +30,4 @@ def insertion_sort(arr):
 
 
 if __name__ == '__main__':
-    insertion_sort(array)
+    merge_sort(array)
